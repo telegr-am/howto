@@ -8,6 +8,7 @@ Welcome to the official Telegram blog!
     	<div style="padding-left: 15px;" data-post="shortcontent">
 			Post Content goes here
     </div>
+	<div data-post="more"><a href="#">Read More...</a></div>
     <hr>
     </li>
 </ul>
