@@ -19,6 +19,14 @@ Telegram also has extensive GitHub integration including:
 I've added a bunch of other stuff to the GitHub support (like lazily calling GitHub to retrieve your
 repository list) to improve the overall quality of Telegram when working with GitHub.
 
+## Hosting real sites
+
+Based on the new features and the solid GitHub integration, I moved [my blog](http://blog.goodstuff.im)
+and the main [Lift](http://liftweb.net) sites over to Telegram.
+
+I'm working on the blog integration so it'll be possible to easily include twitter feeds, generate
+RSS feeds and other stuff in your blog.
+
 Enjoy!
 
 David
