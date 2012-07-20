@@ -55,7 +55,7 @@ In XML documents, Extra Info appears in `<tag>` elements:
 
 In Word and RTF documents, Extra Info is stored as document properties.
 
-<hr>
+-----------------
 
 Available Extra Info:
 
@@ -63,33 +63,33 @@ Available Extra Info:
     <div data-htag="root"><big><big>➥</big></big> <a href="#">Item</a></div>
 </div>
 
-<hr>
+-----------------
 
 
 # `default_template`
 
 Marks the current page as the default template to use -- FIXME
 
-<hr>
+-----------------
 
 # `template`
 
 The template to use for the page.  `default` is the default template except for
 blog posts which default to the `post` template. -- FIXME
 
-<hr>
+-----------------
 
 # `path`
 
 The path to save the resulting file into.  -- FIME
 
-<hr>
+-----------------
 
 # `serve` 
 
 `false` if you do not want the page served.  -- FIXME
 
-<hr>
+-----------------
 
 # `valid_from`
 
@@ -105,7 +105,7 @@ For example:
 The page will not be displayed/rendered until 4:30PM on July 19, 2012.  The time zone
 is based on the time zone of the user who owns the site.
 
-<hr>
+-----------------
 
 # `valid_to`
 
@@ -121,14 +121,14 @@ For example:
 The page will be displayed/rendered until 4:30PM on August 19, 2012.  The time zone
 is based on the time zone of the user who owns the site.
 
-<hr>
+-----------------
 
 # `title`
   
   
 The title of the page.  --FIXME  Prepend  
 
-<hr>
+-----------------
 
 # `menu`
 
@@ -152,32 +152,32 @@ The menu icon CSS -- FIXME
 
 The menu icon placement -- FIXME
 
-<hr>  
+-----------------  
 
 # `site_link`
 
 The global URL of the site -- FIXME
 
-<hr>
+-----------------
 
 # `type`
 
 The type of the page -- FIXME
 
-<hr>
+-----------------
 
 # `template_url`
 
 The URL of the Git repository that has the template for this site.  Global param.  -- FIXME
 
-<hr>
+-----------------
 
 
 # `site_title`
 
 The title of the site.  Global.  -- FIXME
 
-<hr>
+-----------------
 
 # `post`
 
@@ -186,47 +186,45 @@ Is the page a blog post?  If so:
     post: true
     
 Also, if the page is located in the `_posts` directory, it will be considered
-a blog post.
+a blog post. -- FIXME
 
-FIXME
-
-<hr>    
+-----------------
 
 # `event`
 
 Is the page an event?  FIXME
 
-<hr>
+-----------------
 
 # `category`
 
 What's the category of the page? -- FIXME
 
-<hr>
+-----------------
 
 # `layout`
 
 What layout do we use? -- FIXME
 
-<hr>
+-----------------
 
 # `date`
 
 The date of the blog post. -- FIXME
 
-<hr>
+-----------------
 
 # `blog_root`
 
 The site-wide root for all blog posts. -- FIXME
 
-<hr>
+-----------------
 
 # `has_blog`
 
 Does the site have blog posts? -- FIXME
 
-<hr>
+-----------------
 
 # `tag`
 
@@ -236,7 +234,7 @@ Tags for a page:
 
 FIXME
 
-<hr>
+-----------------
 
 # `site_author`
 
@@ -247,7 +245,7 @@ The site wide name of the authors of blog posts. Used for RSS feed generation.  
 
 The author of a blog post for RSS feed purposes.  FIXME
 
-<hr>
+-----------------
 
 # `redirect`
 
@@ -261,7 +259,9 @@ but it does have a menu item that points to an external site:
     
     <div>Nothing to see here</div>
 
-<hr>
+
+
+-----------------
 
 # `alias`
 
@@ -279,7 +279,7 @@ to Telegram:
 On Telegram, the blog post will have the URL `/my_post`, but the page will also be 
 served for requests to `/posts/my_blog_post.html` and `/posts/my_blog_post`.
 
-<hr>
+-----------------
 
 # `no_synthetic_rss_file`
 
@@ -294,7 +294,7 @@ By setting:
 
 The synthetic RSS feed will not be generated.
 
-<hr>
+-----------------
 
 # `h_tags`
 

@@ -15,7 +15,7 @@ Parameters can be passed to a snippet using URL syntax:
 Which will invoke the Twitter snippet and insert a Twitter feed for user `app`
 onto the page with the 6 more recent Twitter posts.
 
-<hr>
+-----------------
 
 Available snippets:
 
@@ -23,7 +23,7 @@ Available snippets:
     <div data-htag="root"><big><big>➥</big></big> <a href="#">Item</a></div>
 </div>
 
-<hr>
+-----------------
 
 # `blog.posts` -- Display blog posts
 
@@ -70,7 +70,7 @@ If the short content was truncated, the DOM node with the `data-post="more"`
 attribute will be displayed.  Any `<a>` tag inside the `data-post="more"`
 DOM node will have its `href` attribute set to a link to the blog post.
 
-<hr>
+-----------------
 
 # `twitter` -- Insert a Twitter feed into the page
 
@@ -115,7 +115,7 @@ The background color for Tweets.  Default `#ffffff`
 
 The text color for Tweets.  Default `#000000`
 
-<hr>
+-----------------
 
 
 # `search` -- Insert a search box
@@ -124,7 +124,7 @@ Insert a Google search box that will search just this site:
 
     <form data-lift="search" style="float: right"></form>
 
-<hr>
+-----------------
 
 # `move_top` -- Rearrange the top of the page
 
@@ -187,7 +187,7 @@ has the CSS class `page-header` or `hero-unit`,
 it will be removed from the `from` DOM and inserted into the `to`
 DOM.
 
-<hr>
+-----------------
 
 # `head` -- Move the block to the `<head>` second of the page
 
@@ -199,7 +199,7 @@ For example:
 
      <link data-lift="head" rel="stylesheet" href="/css/custom-theme/jquery-ui-1.8.16.custom.css" type="text/css">
 
-<hr>
+-----------------
 
 # `tail` -- Move the block to the bottom of the page
 
@@ -213,7 +213,7 @@ For example:
       alert("The page is loaded");
     </script>
 
-<hr>
+-----------------
 
 # `htag-list` or `htag_list` -- List all the H-tags on the page
 
@@ -221,7 +221,7 @@ For example:
 
 ", "render") -> Full(BaseSnippets.hTags),
 
-<hr>
+-----------------
 
 # `bootstraputil.headcomment` -- Insert a comment for Bootstrap
 
@@ -229,7 +229,7 @@ For example:
 some special comments on the page to work nicely with Internet
 Explorer.  Insert the special comment into the `<head>` section of the page
 
-<hr>
+-----------------
 
 # `bootstraputil.bodycomment` -- Insert a comment for Bootstrap
 
@@ -237,7 +237,7 @@ Explorer.  Insert the special comment into the `<head>` section of the page
 some special comments on the page to work nicely with Internet
 Explorer.  Insert the special comment into the `<body>` section of the page
 
-<hr>
+-----------------
 
 # `title` -- Set the title of the page to the contents of the DOM node
 
@@ -253,7 +253,7 @@ And gets placed in the `<head>` section of the HTML page.
 
 
 
-<hr>
+-----------------
 
 # `ignore` -- Ignore the block
 
@@ -265,7 +265,7 @@ Do not include the HTML in the rendered output.  For example:
 
 Useful for having a comment in the markup as part of a work-in-progress.
 
-<hr>
+-----------------
 
 # `site.name` -- Insert the site name
 
@@ -279,7 +279,7 @@ Becomes:
     <div class="fruit_bat">David's Blog</div>
 
 
-<hr>
+-----------------
 
 # `surround` Put a template around the DOM nodes
 
@@ -287,91 +287,91 @@ Surrounds the DOM elements with a template.  This snippet is
 generally used to put "stuff" around the main part of the page.
 The stuff includes menus, FIXME
 
-<hr>
+-----------------
 
 # `embed` Put a template inside the DOM nodes
 
 Inserts a template into the current page -- FIXME
 
-<hr>
+-----------------
 
 # `a`
 
 Link to a named page -- FIXME
 
-<hr>
+-----------------
 
 # `choose`
 
 Choose one or more of the child nodes -- FIXME
 
-<hr>
+-----------------
 
 # `subs`
 
 Choose pages of a particular type -- FIXME
 
-<hr>
+-----------------
 
 # `xmenu`
 
 Generate Menus -- FIXME
 
-<hr>
+-----------------
 
 # `bind`
 
 Generate an `id` `<div>` -- FIXME
 
-<hr>
+-----------------
 
 # `menu.title`
 
 The title of the page -- FIXME
 
-<hr>
+-----------------
 
 # `menu.items`
 
 A set of menu items -- FIXME
 
-<hr>
+-----------------
 
 # `group`
 
 Find a group of pages by type -- FIXME
 
-<hr>
+-----------------
 
 # `google-analytics` or `google_analytics`
 
 Insert the JavaScript for Google Analytics -- FIXME
 
-<hr>
+-----------------
 
 # `withparam`
 
 Insert content into surrounding template -- FIXME
 
-<hr>
+-----------------
 
 # `archived_posts`
 
 List all blog posts and bind to a template by date -- FIXME
 
-<hr>
+-----------------
 
 # `if`
 
 Test an attribute and display the DOM if the attribute exists -- FIXME
 
-<hr>
+-----------------
 
 # `xform`
 
 After the page is fully rendered, apply a CSS Transformation to the page -- FIXME
 
-<hr>
+-----------------
 
 # `page-info` or `page_info` or `pageinfo`
 
