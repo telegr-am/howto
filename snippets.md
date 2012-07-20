@@ -1,4 +1,4 @@
-# Snippets
+## Snippets
 
 Snippets execute computer code that rewrites the DOM elements
 in a section of the page (or in some cases on the who page.)

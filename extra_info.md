@@ -1,4 +1,4 @@
-# Extra Info
+## Extra Info
 
 Pages contain content, but they also contain Extra Information
 about the content.  Extra Information includes stuff like the
