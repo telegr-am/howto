@@ -23,6 +23,14 @@ Available snippets:
     <div data-htag="root"><big><big>➥</big></big> <a href="#">Item</a></div>
 </div>
 
+-------------
+
+# `blog.simple` -- Display blog posts to fixed template
+
+Just display the most recent 15 blog posts in a fixed template.  For example:
+
+    <div data-lift="blog.simple"></div>
+
 -----------------
 
 # `blog.posts` -- Display blog posts
@@ -123,6 +131,39 @@ The text color for Tweets.  Default `#000000`
 Insert a Google search box that will search just this site:
 
     <form data-lift="search" style="float: right"></form>
+    
+-----------------
+
+# `if` -- Conditionally include DOM element
+
+Test an attribute and display the DOM if the attribute or extra info exists and is `true`.
+
+To test if an attribute exists and it `true`:
+
+    <div data-lift="if?toTest=foobar">
+      Yes, foobar is defined!
+    </div>
+    
+To test is Extra Info exists (the value is defined, does not test the value):
+
+    <div data-lift="if?extra=author">
+      The page has an author: <span data-lift="page_info?name=author">Author name here</span>
+    </div>
+
+To test is Extra Info exists and the value is true:
+
+    <div data-lift="if?extra_true=has_blog">
+      <div data-lift="blog.simple"></div>
+    </div>
+
+To test is Extra Info exists and the value equals another String:
+
+    <div data-lift="if?extra_eq=author&value=david+pollak">
+      A blog post by David Pollak, yay!
+    </div>
+
+ 
+    
 
 -----------------
 
@@ -359,11 +400,6 @@ Insert content into surrounding template -- FIXME
 
 List all blog posts and bind to a template by date -- FIXME
 
------------------
-
-# `if`
-
-Test an attribute and display the DOM if the attribute exists -- FIXME
 
 -----------------
 

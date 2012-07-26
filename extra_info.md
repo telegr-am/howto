@@ -123,6 +123,32 @@ is based on the time zone of the user who owns the site.
 
 -----------------
 
+# `show-if` `hide-if`
+
+Conditionally show or hide the page based on other extra info values.  For example,
+show the "Blog Archive" page if there are blog posts:
+
+    show-if: has_blog
+
+
+-----------------------------
+
+# `date-format`
+
+A global extra info that defines the way to format dates for display on Telegram site.
+Dates will have the time zone of the site owner and the locale of the site owner.  For
+example:
+
+    date-format: dd MMMM, yy
+
+
+More information on how to define the date format can be found in the [Joda Time](http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html)
+documentation.
+
+
+---------------------
+
+
 # `title`
   
   
