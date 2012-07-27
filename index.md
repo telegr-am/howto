@@ -10,7 +10,7 @@ These pages are here to answer questions and help you make the most of Telegram.
 
 * [Change the page footer](/recipes/change_footer)
 * [Change the template](/recipes/change_template)
-* [Add a Twitter Feed](/recipese/add_twitter_feed)
+* [Add a Twitter Feed](/recipes/add_twitter_feed)
 
 
 ## Screencasts
