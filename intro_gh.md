@@ -1,35 +1,25 @@
 # Using Telegram and GitHub
 
-<div id="flashcontent">
-		<p>This ScreenFlow video requires a more recent version of the Adobe Flash Player to display.  
-		Please update your version of the 
-		<a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.</p>
-</div>	
 
+<script>
+function replaceVideo() {
+	var html = '<object onerror="aroundvid.innerHTML = \'Must install Flash 9 or newer to see video\'" id="flashcontent" width="512" height="384" type="application/x-shockwave-flash" data="/assets/player.swf" style="visibility: visible;"><param name="bgcolor" value="#000000"><param name="allowscriptaccess" value="always"><param name="flashvars" value="videoPath=https://telegram-media.s3.amazonaws.com/telegram_github.f4v&skinPath=/com/skin/skin.swf"></object>';
 
-<div>
-	<head_stuff>
-		<script type="text/javascript" src="/com/js/swfobject/swfobject.js"></script>		
-		<script type="text/javascript">
-			var flashvars = {};
-			var params = {};
+	aroundvid.innerHTML = html;
+	return false;
+}
 
-			params.bgcolor = "#000000";
-			params.allowscriptaccess = "always";
+</script>
 
-			flashvars.videoPath = "https://telegram-media.s3.amazonaws.com/telegram_github.f4v";
-			flashvars.posterPath = "/com/poster/myPosterFrame.jpg";
-			flashvars.skinPath = "/com/skin/skin.swf";
+The following video is 10 minutes on using Telegram with [GitHub](http://github.com) and a few
+advanced Telegram features:
 
-			var stageW = 512;
-			var stageH = 384;
-
-			var attributes = {};
-			attributes.id = "flashcontent";			
-
-			swfobject.embedSWF("/assets/player.swf", "flashcontent", stageW, stageH, "9.0.0", false, flashvars, params, attributes);
-		</script>
-	</head_stuff>
+<div id="aroundvid">
+	<video controls width="512" height="384" src="https://telegram-media.s3.amazonaws.com/telegram_github.mov"  onerror="replaceVideo()" >
+       <object onerror="aroundvid.innerHTML = \'Must install Flash 9 or newer to see video\'" id="flashcontent" width="512" height="384" type="application/x-shockwave-flash" data="/assets/player.swf" style="visibility: visible;"><param name="bgcolor" value="#000000"><param name="allowscriptaccess" value="always"><param name="flashvars" value="videoPath=https://telegram-media.s3.amazonaws.com/telegram_github.f4v&skinPath=/com/skin/skin.swf"></object>
+	</video>
 </div>
+
+
 
 [title: Using Telegram and GitHub]: /
