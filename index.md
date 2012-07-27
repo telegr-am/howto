@@ -1,8 +1,26 @@
 # Telegram How To...
 
 Telegram sites are rendered using [Hoisted](http://hoisted.org) to convert
-the HTML, XML, RTF, Word, and Markdown files into a bunch of HTML files
+the HTML, XML, and Markdown files into a bunch of HTML files
 that make up a coherent whole web site.
+
+These pages are here to answer questions and help you make the most of Telegram.
+
+## Recipes
+
+* [Change the page footer](/recipes/change_footer)
+* [Change the template](/recipes/change_template)
+* [Add a Twitter Feed](/recipese/add_twitter_feed)
+* 
+
+## Screencasts
+
+* [Telegram and Dropbox](/intro_db)
+* [Telegram and GitHub](/intro_gh)
+* [Migrate to Telegram from Posterous](/migrate_posterous)
+
+
+## Core Concepts
 
 There are a series of core concepts in the way Hoisted/Telegram works:
 
