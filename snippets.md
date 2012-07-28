@@ -297,6 +297,8 @@ For example:
 
 #### Attribute: `data-address` -- the address to map
 
+<div data-lift="google.map" data-address="541 8th St, San Francisco, CA">
+</div>
 
 ----------------
 
