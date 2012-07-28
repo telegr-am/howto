@@ -256,6 +256,50 @@ For example:
 
 -----------------
 
+
+# `disqus` -- insert a Disqus forum
+
+Inserts a [Disqus](http://disqus.com/) forum on the page.
+
+#### Parameter: `shortname` -- the name of the forum
+
+For example, in the `/templates-hidden/post_include.html` add the line:
+
+    <span data-lift="disqus?shortname=dppblog"></span>
+    
+#  `disqus.count` -- number of posts for each link
+
+For each link to a blog post, list the number of comments near the link.
+
+#### Parameter: `shortname` -- the name of the forum
+
+For example, in the `/index.md` file, include the line:
+
+
+    <span data-lift="disqus.count?shortname=dppblog"></span>
+    
+-----------------
+
+# `google.map` -- Insert a Google Map
+
+Insert a Google Map on the page at the location of the snippet.
+
+For example:
+
+    My office is located at:
+    
+    <div data-lift="google.map" data-address="541 8th St, San Francisco, CA">
+    </div>
+    
+#### Parameter: `width` -- the width of the display box
+
+#### Parameter: `height` -- the height of the display box
+
+#### Attribute: `data-address` -- the address to map
+
+
+----------------
+
 # `htag-list` or `htag_list` -- List all the H-tags on the page
 
 
