@@ -265,7 +265,14 @@ Inserts a [Disqus](http://disqus.com/) forum on the page.
 
 For example, in the `/templates-hidden/post_include.html` add the line:
 
-    <span data-lift="disqus?shortname=dppblog"></span>
+    <span data-lift="xform" data-css="#after-content *">
+      <span data-lift="disqus?shortname=dppblog"></span>
+    </span>
+
+The outer `xform` puts the inner span under the blog post on your page.  The
+inner `disqus` inserts the correct JavaScript on the page to show the
+Disqus comments for that page.
+
     
 #  `disqus.count` -- number of posts for each link
 
@@ -274,9 +281,9 @@ For each link to a blog post, list the number of comments near the link.
 #### Parameter: `shortname` -- the name of the forum
 
 For example, in the `/index.md` file, include the line:
-
-
+    
     <span data-lift="disqus.count?shortname=dppblog"></span>
+
     
 -----------------
 
