@@ -268,11 +268,14 @@ For example, in the `/templates-hidden/post_include.html` add the line:
     <span data-lift="xform" data-css="#after-content *">
       <span data-lift="disqus?shortname=dppblog"></span>
     </span>
+    <span data-lift="xform" data-css="#after-content [id]">disqus_thread</span>
 
 The outer `xform` puts the inner span under the blog post on your page.  The
 inner `disqus` inserts the correct JavaScript on the page to show the
 Disqus comments for that page.
 
+The second `xform` sets the `id` attribute so you can click through from
+a comment count link.
     
 #  `disqus.count` -- number of posts for each link
 
