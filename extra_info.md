@@ -222,6 +222,13 @@ Is the page an event?  FIXME
 
 -----------------
 
+# `article`
+
+Is the page an article?  FIXME
+
+
+-----------------
+
 # `category`
 
 What's the category of the page? -- FIXME
