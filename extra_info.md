@@ -145,8 +145,61 @@ example:
 More information on how to define the date format can be found in the [Joda Time](http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html)
 documentation.
 
+# `global-locale` -- Override the locale #
+
+By default, Telegram uses the locale defined in the user profile for parsing and formatting
+dates and other locale-related stuff.
+
+You can set the locale for the site by putting the following Extra Info into a file on your site:
+
+    global-locale: en_US
+
+The valid locales are based on the locales in the [Java Locale class](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html).
+
+# `global-timezone` -- Override the time zone #
+
+By default, Telegram uses the time zone defined in the user profile for parsing and formatting
+dates and other time-related stuff.
+
+You can set the time zone for the site by putting the following Extra Info into a file on your site:
+
+    global-timezone: EST
+
+The valid time zones can be found in the [Joda Time library](http://joda-time.sourceforge.net/timezones.html).
+
 
 ---------------------
+
+# `no_synthetic_rss_file`
+
+A site-wide Extra Info parameter.  By default, if there are any pages
+marked as blog posts, Telegram will generate a synthetic `rss.xml` file
+and insert `<link type="application/rss+xml" rel="alternate" href="/rss.xml">`
+in the `<head>` of every page.
+
+By setting:
+
+    no_synthetic_rss_file: true
+
+The synthetic RSS feed will not be generated.
+
+# `rss_url` -- Support for Feedburner and other URL aggregation services #
+
+A site-wide Extra Info parameter. By default, the `<link>` generated for the RSS feed looks like:
+
+    <link type="application/rss+xml" rel="alternate" href="/rss.xml">
+
+But if you're using Feedburner or some other service, you want to change the `href` attribute
+in the `<link>` tag. Use:
+
+    rss_url: http://feeds.feedburner.com/dppsblog
+
+And the RSS `<link>` will be written:
+
+    <link type="application/rss+xml" rel="alternate" href="http://feeds.feedburner.com/dppsblog">
+
+
+-----------------
 
 
 # `title`
@@ -314,20 +367,6 @@ served for requests to `/posts/my_blog_post.html` and `/posts/my_blog_post`.
 
 -----------------
 
-# `no_synthetic_rss_file`
-
-A site-wide Extra Info parameter.  By default, if there are any pages
-marked as blog posts, Telegram will generate a synthetic `rss.xml` file
-and insert `<link type="application/rss+xml" rel="alternate" href="/rss.xml">`
-in the `<head>` of every page.
-
-By setting:
-
-    no_synthetic_rss_file: true
-
-The synthetic RSS feed will not be generated.
-
------------------
 
 # `h_tags`
 
