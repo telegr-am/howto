@@ -4,7 +4,7 @@ Title:	Your clients can change content but not design
 
 Telegram offers the most amazing ways for your clients to update their site
 without bothering you, without knowing any passwords, without logging into a web site,
-and without the ability to break your design.
+and without breaking your design.
 
 ### Update by Dropbox ###
 
