@@ -7,4 +7,4 @@ template_url: https://github.com/telegr-am/template-green.git
 ```
 3. Save the file and publish your site
 
-For more information, see [Templates](/tempaltes)
+For more information, see [Templates](/templates)
