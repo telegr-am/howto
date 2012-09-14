@@ -209,18 +209,19 @@ And the RSS `<link>` will be written:
 # `title`
   
   
-The title of the page.  --FIXME  Prepend  
+The title of the page. This is what will appear in the titlebar/tab of the user's browser. --FIXME  
+
 
 -----------------
 
 # `menu`
 
-The menu name of the page -- FIXME
-
+For a page, this is the description that appears in the menu. If not provided, the menu item will appear as the page name with '-'s removed, and each word capitalized.
+ 
 
 # `order`
 
-The menu order -- FIXME
+A number to determine the order of pages in the menu. Higher numbers appear to the left of lower numbers. If two items have the same number, they are sorted alphabetically.
 
   
 # `menu-locgroup`
@@ -391,3 +392,11 @@ For a single `<h*>` tag, what's the id? -- FIXME
 
 For a single `<h*>` tag, what's the body? -- FIXME
 
+
+Here's an example of creating a table of contents that will only show the top-level header items. The content in the div with a data-htag="root" attribute is the code that will render for each item. Telegram will replace the &lt;a href="#"&gt;Item&lt;/a&gt; with a link to the header item, and it's text.
+
+<pre>
+	&lt;div data-lift="htag-list?depth=1"&gt;
+    	&lt;div data-htag="root"&gt;&lt;big&gt;&lt;big&gt;âž¥&lt;/big&gt;&lt;/big&gt; &lt;a href="#"&gt;Item&lt;&lt;/a&gt;&lt;/div&gt;
+	&lt;/div&gt;
+</pre>
