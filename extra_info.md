@@ -19,7 +19,11 @@ In Markdown documents, Extra Info can appear at the top of the page:
 
 Markdown documents can also use Refs for extra info.  The advantage to using
 refs is that if you're using an editor with preview, the extra info will
-not appear.  Here's an example:
+not appear.  
+
+One thing to note here. If you omit the trailing /, you may find the extra info starts appearing on your page. Play it safe, and always include the trailing / if your using the ref style.
+
+Here's an example:
 
     [title: I like wombats]:/ 
     [menu: Wombats]: /
