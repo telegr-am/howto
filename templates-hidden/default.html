@@ -8,70 +8,45 @@
 
     <meta data-lift="BootstrapUtil.headComment">
 
-    <script type="text/javascript" src="/js/jquery-1.6.2.min.js"></script>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css" rel="stylesheet"/>
 
 
-    <!-- Styles -->
-    <link type="text/css" href="/css/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet"/>
-    <link href="/bootstrap/bootstrap.css" rel="stylesheet">
-    <style type="textcss">
-            /* Override some defaults */
-            html, body {
-            background-color: #eee;
-            }
-            body {
-            padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-            }
-            .container > footer p {
-            text-align: center; /* center align it with the container */
-            }
-    
-            /* The white background content wrapper */
-            .container > .content {
-            background-color: #none;
-            padding: 20px;
-            margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-            -webkit-border-radius: 0 0 6px 6px;
-            -moz-border-radius: 0 0 6px 6px;
-            border-radius: 0 0 6px 6px;
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-            box-shadow: 0 1px 2px rgba(0,0,0,.15);
-            }
-    
-            /* Page header tweaks */
-            .page-header {
-            background-color: #f5f5f5;
-            padding: 20px 20px 10px;
-            margin: -20px -20px 20px;
-            }
-    
-            .topbar .btn {
-            border: 0;
-            }
-    
-        </style>
-		<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
+
+
+    <link type="text/css" href="/css/telegram.css" rel="stylesheet"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-<div data-lift="BootstrapUtil.bodyComment"></div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://telegr.am">
+                Telegram
+            </a>
+        </div>
 
-<div class="topbar">
-    <div class="fill">
-        <div class="container">
-            <a class="brand" href="https://telegr.am">Telegram</a>
-            <div class="nav-left"></div>
-            <ul class="nav">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
                 <li><a href="https://telegr.am">Home</a></li>
                 <li><a href="https://blog.telegr.am">Blog</a></li>
-                <li><a href="https://howto.telegr.am">How To...</a></li>
+		<li><a href="https://howto.telegr.am">How To...</a></li>
             </ul>
-            <div class="nav-right"></div>
-        </div>
-    </div>
-</div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
 
 <div class="container">
@@ -80,35 +55,29 @@
     </div>
 
     <footer style="text-align: center">
-        A <a href="http://twitter.com/dpp">David</a> <a href="http://goodstuff.im">Pollak</a> Thingy •
+        <hr>
+        <p>
+        Telegram: Easily Deploy Infinitely Scalable Web Apps •
+        A <a href="http://twitter.com/dpp">David</a> <a href="http://blog.goodstuff.im">Pollak</a> Thingy •
         Powered by <a href="http://www.liftweb.net"><i>Lift</i></a> and <a href="http://hoisted.org">Hoisted</a>
+        </p>
         <br>
         <a href="https://twitter.com/intent/tweet?screen_name=_telegram" class="twitter-mention-button">Tweet to @_telegram</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </footer>
 
 </div>
 <!-- /container -->
-
 <!--scripts-->
 
-
-<script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
-
-
-<!--daterangepicker-->
-<script type="text/javascript" src="/third-party/jQuery-UI-Date-Range-Picker/js/date.js"></script>
-<script type="text/javascript" src="/third-party/jQuery-UI-Date-Range-Picker/js/daterangepicker.jQuery.js"></script>
-
-<!--wijmo-->
-<script src="/third-party/wijmo/jquery.mousewheel.min.js" type="text/javascript"></script>
-<script src="/third-party/wijmo/jquery.bgiframe-2.1.3-pre.js" type="text/javascript"></script>
-<script src="/third-party/wijmo/jquery.wijmo-open.1.5.0.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 
-<!-- FileInput -->
-<script src="/third-party/jQuery-UI-FileInput/js/enhance.min.js" type="text/javascript"></script>
-<script src="/third-party/jQuery-UI-FileInput/js/fileinput.jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 <div id="getsat-widget-347"></div>
 <script type="text/javascript" src="https://loader.engage.gsfn.us/loader.js"></script>
