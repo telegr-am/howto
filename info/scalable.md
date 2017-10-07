@@ -30,13 +30,3 @@ site access (like Twitter, Google Calendar, etc.) will give your users an excell
 [David Pollak](http://blog.goodstuff.im) founded Telegram. David also built [Lift](http://liftweb.net)
 which powers [Foursquare](http://foursquare.com) and David helped Twitter with scalability
 issues in 2008. David knows scalable and built Telegram to scale.
-
-## You don't pay extra for Scalable ##
-
-Telegram's utility pricing (pay for the bandwidth and storage you use) means that you don't
-pay extra for a "fast" box and you don't need to upgrade your plan if you have a month or
-two of high traffic because your site was mentioned on Hacker News or CNN or something.
-Yes, for those months, you'll pay more because your site traffic is higher, but when your
-site traffic drops to a lower level, you pay less.
-
-

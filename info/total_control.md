@@ -12,12 +12,12 @@ Need to serve Flash, AVIs, or any other kind of content, Telegram will publish i
 
 You can also use Telegram's site weaving features to create menus, convert Markdown,
 RTF, Pages, and Word documents into HTML, and ability to wrap consistent
-templates around HTML fragments. 
+templates around HTML fragments.
 
 ## It's your choice, you're in control
 
 Telegram templates can be stored as part of your site repository. Telegram templates
-can also be public Git repositories or private GitHub repos or Dropbox folders. Telegram
+can also be public Git repositories or private GitHub repos. Telegram
 templates can be hosted in ways that make your life easier.
 
 ## Whatever App ##
@@ -31,4 +31,3 @@ tools you know best. Telegram will serve it.
 
 You can edit Telegram content on your phone, iPad, computer, whatever. You don't need
 special software or a special App to create and manage your Telegram site.
-

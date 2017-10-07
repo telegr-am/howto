@@ -8,8 +8,6 @@ Telegram is about making you happy and about making your client's happy.
 
 * Focus on what you're good at: design and use the tools you love best
 * Putting you and your clients in control
-* Let your clients manage their own content using email or in a shared
-  Dropbox folder
 * Host on Telegram knowing you've got a rock solid, super-scalable system that
   will serve your client's content 24x7
 * Use features like emailing PDFs of pages and other stuff to make life easier for your clients
@@ -32,12 +30,9 @@ better every day.
 We share our customer support using [Get Satisfaction](https://getsatisfaction.com/)
 so you can see how we treat our customers and how we help them solve problems.
 
-We price fairly and base our pricing on how much of Telegram you use.
-
 We help you focus on what you love: building great web sites.
 
 We help you service your clients with innovative ways for them to post and
 manage the content that drives their business.
 
 We keep you as a customer because we're about making you happy, every day.
-
