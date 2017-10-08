@@ -250,6 +250,119 @@ section for that phase of rendering and copy those secrets into the `/input/_sec
 directory. The specific renderer should look for its secret or secrets in that
 directory.
 
+### Renderers
+
+Each phase of the pipeline is executed by code running in a Docker container
+that was `docker pull`ed. The basic operation of each of the containers
+is to take the contents of the *read-only* `/input` directory, perform its
+rendering and leave the results in `/output/html` to be served by Telegram
+or place other subdirectories of `/output` to pass intermediate results to
+other renderers in the pipeline.
+
+When the site code is initially set up, Telegram places the code in
+`/input/main`, then moves files/directories based on the `move_to_input_root`,
+and finally decrypts and hides the `*.telegram.enc` files.
 
 
+The following renderers are available in open source from Telegram:
+
+* [Hugo](https://github.com/telegr-am/renderers/tree/master/hugo) -- renders a site with
+  the [Hugo](http://gohugo.io/) static site generator
+* [GatsbyJS](https://github.com/telegr-am/renderers/tree/master/gatsby) -- renders a site
+  with the [Gatsby](https://www.gatsbyjs.org/) static site generator
+* [Jekyll](https://github.com/telegr-am/renderers/tree/master/jekyll) -- renders the site
+  with GitHub flavored Markdown via the [Jekyll](http://jekyllrb.com/) static site
+  generator
+* [Hoisted](https://github.com/telegr-am/renderers/tree/master/hoisted) -- renders the
+  site with [Hoisted](https://github.com/hoisted), the [Lift](https://liftweb.net)
+  flavored Markdown renderer.
+* [Passthru](https://github.com/telegr-am/renderers/tree/master/passthru) -- copy
+  the source (`/input/main`) to the destination (`/output/html`) which is useful if the
+  site was rendered with another system and you're just looking to host it on Telegram.
+* [Serverless](https://github.com/telegr-am/renderers/tree/master/serverless) -- takes
+  the contents of `/input/serverless` and treats it as a [Serverless](https://serverless.com)
+  project and deploys it with the Serverless framework
+  
+### Routing: Redirects, Proxying, Auth, and More
+
+In addition to serving static HTML pages and other static assets, your Telegram-hosted
+site can redirect and proxy requests.
+
+After each rendering phase, Telegram tests the `/output/routing.json` and
+`/output/html/routing.json` file and integrates the following fields into
+Telegram's routing:
+
+* `proxy` -- full site reverse proxying
+* `uri_updates` -- simple URI re-writing that allows pointing old requests to new pages
+* `redirect` -- Redirect certain requests
+* `proxy_pass` -- rules for reverse proxying incoming requests to external services
+* `uri_auth` -- authentication for parts of the site
+* `site_auth` -- authentication for the whole site          
+
+```json
+{
+ "proxy": "https://target.proxy.domain.example.com",
+ "uri_updates": {"/foo/bar": "/the_bar_file.html"},
+ "redirect": [{"from": "/uri_root",
+                       "to": "target",
+                       "test_as_prefix": false,
+                       "append_uri": false,
+                       "trim_on_append": false,
+                       "result_code": 301}],
+ "proxy_pass": [{"from": "/uri_root",
+                           "to": "https://my.serverless.function.lambda.example.com",
+                           "test_as_prefix": false,
+                           "append_uri": false,
+                           "trim_on_append": false}],
+ "uri_auth": [{"from": "/uri_root",
+                         "username": "froog",
+                         "password": "simple"}],
+"site_auth": {"username": "froog", "password": "simple"}
+
+}
+```
+
+`proxy` -- if this field exists, proxy the request to that domain and cease all other processing.
+
+
+`uri_updates` -- absolute match (vs. a prefix match) If the match exists, the uri is converted to from the key to the value. This is an internal rewrite. The browser never sees the change.
+
+`redirect` -- a list of redirects. If the redirect is matched, then the redirect is processed:
+
+* `from` -- the incoming URI to test
+* `to` -- where the redirect (or proxy) is sent to. In the case of a proxy, this must start with `https://`
+* `test_as_prefix` -- if this is `false` the incoming URI must match `from`. If it's `true`, the `from` field must be a prefix of (e.g., `uri.startsWith(from)`) the uri.
+* `append_uri` -- should the URI be appended to the redirect/proxy?
+* `trim_on_append` -- if the uri is appended to the redirect/proxy, should it be trimmed: `uri.substring(from.length())`
+* `result_code` -- the http result code returned with the redirect. 
+
+`proxy_pass` -- works like `redirects` except it passes the request to another server. Useful for hosting a serverless app.
+
+`uri_auth` -- for any URI that has `from` as its prefix, HTTP basic auth is required for the page.
+
+`site_auth` -- basic auth for any page served on the site (not proxy pass nor redirects). Used for staging sites.
+
+Application order:
+
+* `uri_update`
+* `redirect` -- if match, the redirect happens immediately
+* `proxy_pass` -- if matched, the proxy is applied immediately
+* `site_auth` -- if the field exists, require auth for the site and the URI auth is ignored
+* `uri_auth` -- If the uri prefix matches, apply this auth
+
+## Serving
+
+Once the rendering is successful, the accumulated routing and the site contents
+from the `/output/html` directory are atomically published to Telegram's
+Content Delivery Network (CDN).
+
+Your site will be available at `https://<sitename>.telegr.am` and optionally
+at the host you define in "Optional Domain" you defined when you set up
+the site.
+
+In order to host your at your own domain, you must set the [`CNAME` record](https://duckduckgo.com/?q=set+cname_
+of your domain to `cname.telegr.am`.
+
+Telegram uses [Let's Encrypt](https://letsencrypt.org/) to serve your site securely via
+HTTPS.
 
