@@ -1,4 +1,3 @@
-
 # Telegram #
 
 Telegram is a web application hosting/publishing platform.
@@ -26,7 +25,7 @@ on [GitHub](https://github.com).
 
 Rendering is how the source code that makes up your site into
 code that can be delivered to your users. Telegram has built
-in support for [Hugo](https://gohugo.io/), [Gatsby](https://www.gatsbyjs.org/), [Jekyll](https://jekyllrb.com/), and 
+in support for [Hugo](https://gohugo.io/), [Gatsby](https://www.gatsbyjs.org/), [Jekyll](https://jekyllrb.com/), and
 [Hoisted](/hoisted_howto). Plus you
 can define your own transformations in a [Docker](https://docker.com) container.
 
@@ -78,7 +77,7 @@ Copy the x-secretcode information from above. It will only be displayed once. It
 
 Copy the `x-secretcode` header information. This is the passcode you’ll need to publish your site. It will never be presented again.
 
-Enter a site name. The site name must be unique across all Telegram sites. Your site will be 
+Enter a site name. The site name must be unique across all Telegram sites. Your site will be
 served from `https://<sitename>.telegr.am`. Additionally, if you specify a domain name, Telegram
 will serve your site at that domain as long as you set the [`CNAME`](https://en.m.wikipedia.org/wiki/CNAME_record) of your domain to `cname.telegr.am`.
 
@@ -112,7 +111,7 @@ button to cause Telegram to do a pull and send the site through to the rendering
 ### Add a site Hosted at GitHub
 
 If you have linked your Telegram account with your GitHub account, you will be
-presented with the option to add a site hosted at GitHub. 
+presented with the option to add a site hosted at GitHub.
 
 When you click the “Add site hosted at GitHub” button, Telegram will get a list
 of all the repositories you have access to on GitHub and present you with a drop-down
@@ -171,14 +170,14 @@ Telegram takes the content of `/output/html` and sends that to the Telegram CDN.
 When Telegram starts rendering your site, it looks for a `.telegram_pipeline.json`
 file in the root directory of your site code. If Telegram finds that file, it
 will be used to define the rendering. If Telegram cannot find the file, Telegram
-will attempt to infer site structure 
+will attempt to infer site structure
 using the [Build Pipeline](https://github.com/telegr-am/renderers/tree/master/build_pipeline)
 heuristics.
 
 The format of the pipeline JSON file is:
 
 ```json
-{"version": 1.0, 
+{"version": 1.0,
  "pipeline": [{"docker": "opentelegram/hugo:latest"},
               {"docker": "opentelegram/serverless:latest",
                "secrets": ["serverless_conf"]}],
@@ -202,9 +201,9 @@ Here's the meaning of the fields:
   This is to prevent pushing a site live
   that may not have a landing page. You may be hosting a site on Telegram that does
   not have a landing page. To tell Telegram that it's okay to push a site live that does
-  not have a landing page, put `"ignore_index": false` in the pipeline. This field
-  is optional.
-  
+  not have a landing page, put `"ignore_index": true` in the pipeline. This field
+  is optional and defaults to `false`.
+
 The `pipeline` field contains an array of pipeline phase definitions:
 
 * `docker` -- the public Docker container that will execute the rendering phase.
@@ -231,7 +230,7 @@ For example, there’s a valid IAM token in the [`serverless_conf.telegram.enc`]
 be decrypted with a key known to Telegram and to David.
 
 To obtain a per-site encryption key and IV (initialization vector), click the
-“Secret” button for your site. Telegram will present you with 
+“Secret” button for your site. Telegram will present you with
 the command to encrypt your file including the Key and the IV. Copy the
 key and the IV to a secure location. This is the password for any secrets
 you keep in your repository.
@@ -282,7 +281,7 @@ The following renderers are available in open source from Telegram:
 * [Serverless](https://github.com/telegr-am/renderers/tree/master/serverless) -- takes
   the contents of `/input/serverless` and treats it as a [Serverless](https://serverless.com)
   project and deploys it with the Serverless framework
-  
+
 ### Routing: Redirects, Proxying, Auth, and More
 
 In addition to serving static HTML pages and other static assets, your Telegram-hosted
@@ -297,7 +296,7 @@ Telegram's routing:
 * `redirect` -- Redirect certain requests
 * `proxy_pass` -- rules for reverse proxying incoming requests to external services
 * `uri_auth` -- authentication for parts of the site
-* `site_auth` -- authentication for the whole site          
+* `site_auth` -- authentication for the whole site
 
 ```json
 {
@@ -334,7 +333,7 @@ Telegram's routing:
 * `test_as_prefix` -- if this is `false` the incoming URI must match `from`. If it's `true`, the `from` field must be a prefix of (e.g., `uri.startsWith(from)`) the uri.
 * `append_uri` -- should the URI be appended to the redirect/proxy?
 * `trim_on_append` -- if the uri is appended to the redirect/proxy, should it be trimmed: `uri.substring(from.length())`
-* `result_code` -- the http result code returned with the redirect. 
+* `result_code` -- the http result code returned with the redirect.
 
 `proxy_pass` -- works like `redirects` except it passes the request to another server. Useful for hosting a serverless app.
 
@@ -365,4 +364,3 @@ of your domain to `cname.telegr.am`.
 
 Telegram uses [Let's Encrypt](https://letsencrypt.org/) to serve your site securely via
 HTTPS.
-
