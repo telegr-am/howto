@@ -312,7 +312,9 @@ Telegram's routing:
                            "to": "https://my.serverless.function.lambda.example.com",
                            "test_as_prefix": false,
                            "append_uri": false,
-                           "trim_on_append": false}],
+                           "trim_on_append": false,
+                           "append_index": false,
+                           "cache_proxy": false}],
  "uri_auth": [{"from": "/uri_root",
                          "username": "froog",
                          "password": "simple"}],
@@ -335,7 +337,10 @@ Telegram's routing:
 * `trim_on_append` -- if the uri is appended to the redirect/proxy, should it be trimmed: `uri.substring(from.length())`
 * `result_code` -- the http result code returned with the redirect.
 
-`proxy_pass` -- works like `redirects` except it passes the request to another server. Useful for hosting a serverless app.
+`proxy_pass` -- works like `redirects` except it passes the request to another server. Useful for hosting a serverless app. Note the two additional fields:
+
+* `append_index` -- if set to `true`, then in the URL ends with a `/`, `index.html` is appended to the URL. This makes proxying sites stored in DigitalOcean Spaces or AWS S3 Buckets friendlier.
+* `cache_proxy` -- For `GET` and `HEAD` requests, cache the proxied response for up to 30 minutes.
 
 `uri_auth` -- for any URI that has `from` as its prefix, HTTP basic auth is required for the page.
 
